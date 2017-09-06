@@ -314,7 +314,7 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openPower
 
     char *data = (char*)malloc(5* sizeof(char));
 
-    *(data) = 0x3a;
+    *(data) = 0x3b;
     *(data+1) = 0x4a;
     *(data+2) = 0x53;
     *(data+3) = (cmd == 1 ? 0x01:0x02);
