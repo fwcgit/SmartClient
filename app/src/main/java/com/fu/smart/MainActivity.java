@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         final Socket socket = new Socket();
         try
         {
-            socket.nativeConnectServer("42.196.57.78",34808);
+            socket.nativeConnectServer("192.168.4.1",34808);
         }catch (Exception e){
             e.printStackTrace();
         }
