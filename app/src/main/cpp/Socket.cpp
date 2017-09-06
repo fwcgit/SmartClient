@@ -374,6 +374,7 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openSocket
 JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openAirfan
         (JNIEnv *env, jobject obj, jint cmd)
 {
+
     char *data = (char*)malloc(5* sizeof(char));
 
     *(data) = 0x3b;
