@@ -28,15 +28,15 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_nativeConnectServer
  * Method:    sendData
  * Signature: (Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendData__Ljava_lang_String_2
+JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendData
   (JNIEnv *, jobject, jstring);
 
 /*
  * Class:     com_fu_smart_jni_Socket
- * Method:    sendData
+ * Method:    sendDataByte
  * Signature: ([B)V
  */
-JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendData___3B
+JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendDataByte
   (JNIEnv *, jobject, jbyteArray);
 
 /*

@@ -40,10 +40,12 @@ static void* read_socket_data_thread(void*)
     if(0 == gVm->AttachCurrentThread(&env,NULL))
     {
        char buffer[MAX_BUFFER_SIZE];
-       while(!is_connect);
+
 
        while(is_run)
       {
+
+        while(!is_connect);
 
         ssize_t  recvSize = recv(socket_id,buffer,MAX_BUFFER_SIZE,0);
 
@@ -81,6 +83,8 @@ static void* read_socket_data_thread(void*)
 
                         free(jBytes);
                         jBytes = NULL;
+
+                        env->DeleteLocalRef(ba);
 
                     }
 
@@ -212,14 +216,16 @@ void sendHearData()
 
     JNIEnv *jniEnv;
 
-    gVm->GetEnv((void **)&jniEnv,JNI_VERSION_1_6);
-
+    if(jniEnv == NULL){
+        gVm->GetEnv((void **)&jniEnv,JNI_VERSION_1_6);
+    }
     char *buffer = (char *) malloc(3 * sizeof(char));
     *(buffer) = 0x3a;
     *(buffer+1) = 0xfe;
     *(buffer+2) = 0x0d;
     sendToSocket(jniEnv,gObj,buffer, sizeof(buffer));
     free(buffer);
+    buffer = NULL;
 }
 
 /*
@@ -279,7 +285,7 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendData
  * Method:    sendData
  * Signature: ([B)V
  */
-JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendData___3B
+JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendDataByte
         (JNIEnv *env, jobject obj, jbyteArray data)
 {
 
@@ -297,8 +303,10 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_sendData___3B
     sendToSocket(env,obj,buff,size);
 
     env->ReleaseByteArrayElements(data,jbyteList,0);
+
     free(buff);
     buff = NULL;
+
 
 }
 
@@ -317,13 +325,13 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openPower
     *(data) = 0x3b;
     *(data+1) = 0x4a;
     *(data+2) = 0x53;
-    *(data+3) = (cmd == 1 ? 0x01:0x02);
+    *(data+3) = (cmd == 1 ? 0x02:0x01);
     *(data+4) = 0x0d;
 
-    sendToSocket(env,obj,data, sizeof(data));
+    sendToSocket(env,obj,data, 5);
 
     free(data);
-
+    data = NULL;
 }
 
 /*
@@ -340,11 +348,12 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openLight
     *(data) = 0x3b;
     *(data+1) = 0x4a;
     *(data+2) = 0x54;
-    *(data+3) = (cmd == 1 ? 0x01:0x02);
+    *(data+3) = (cmd == 1 ? 0x02:0x01);
     *(data+4) = 0x0d;
 
-    sendToSocket(env,obj,data, sizeof(data));
-
+    sendToSocket(env,obj,data, 5);
+    free(data);
+    data = NULL;
 }
 
 /*
@@ -360,10 +369,12 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openSocket
     *(data) = 0x3b;
     *(data+1) = 0x4a;
     *(data+2) = 0x55;
-    *(data+3) = (cmd == 1 ? 0x01:0x02);
+    *(data+3) = (cmd == 1 ? 0x02:0x01);
     *(data+4) = 0x0d;
 
-    sendToSocket(env,obj,data, sizeof(data));
+    sendToSocket(env,obj,data, 5);
+    free(data);
+    data = NULL;
 }
 
 /*
@@ -380,10 +391,12 @@ JNIEXPORT void JNICALL Java_com_fu_smart_jni_Socket_openAirfan
     *(data) = 0x3b;
     *(data+1) = 0x4a;
     *(data+2) = 0x56;
-    *(data+3) = (cmd == 1 ? 0x01:0x02);
+    *(data+3) = (cmd == 1 ? 0x02:0x01);
     *(data+4) = 0x0d;
 
-    sendToSocket(env,obj,data, sizeof(data));
+    sendToSocket(env,obj,data, 5);
+    free(data);
+    data = NULL;
 
 }
 

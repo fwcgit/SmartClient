@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnOnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="开关" />
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="主页" />
+
+
+    <RelativeLayout
+        android:id="@+id/centerRl"
+        android:layout_width="match_parent"
+        android:layout_below="@id/btnOnOff"
+        android:layout_height="200dp">
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btnOk"
+            android:layout_alignTop="@id/btnOk"
+            android:text="<" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btnOk"
+            android:layout_alignTop="@id/btnOk"
+            android:text=">" />
+
+        <Button
+            android:id="@+id/btnTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnOk"
+            android:layout_alignLeft="@id/btnOk"
+            android:text="∧" />
+
+        <Button
+            android:id="@+id/btnBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnOk"
+            android:layout_alignLeft="@id/btnOk"
+            android:text="∨" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/centerRl"
+        >
+        <Button
+            android:id="@+id/btnChannelAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="频道+" />
+
+        <Button
+            android:id="@+id/btnChannelCut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="频道-" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/centerRl"
+        android:layout_centerHorizontal="true"
+        android:text="返回" />
+
+    <Button
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnBack"
+        android:layout_centerHorizontal="true"
+
+        android:text="菜单" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/centerRl"
+        android:layout_alignParentRight="true"
+        >
+        <Button
+            android:id="@+id/btnChannelAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="音量+" />
+
+        <Button
+            android:id="@+id/btnChannelCut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="音量-" />
+    </LinearLayout>
+
+</RelativeLayout>
