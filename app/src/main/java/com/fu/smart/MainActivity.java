@@ -1,6 +1,7 @@
 package com.fu.smart;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringDef;
@@ -192,6 +193,13 @@ public class MainActivity extends Activity implements Socket.Parser {
                 data[3] = 0x02;
                 data[4] = 0x0d;
                 socket.sendDataByte(data);
+            }
+        });
+
+        findViewById(R.id.button16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,TvControlActivity.class));
             }
         });
 

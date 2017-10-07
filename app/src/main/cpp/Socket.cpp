@@ -137,7 +137,6 @@ static void ConnectToAddress(JNIEnv *env,jobject obj,int socketID, const char *i
     }
 
 }
-
 static int CreateTcpSocket(JNIEnv *env,jobject obj)
 {
     logD("create new Tcp socket.....");

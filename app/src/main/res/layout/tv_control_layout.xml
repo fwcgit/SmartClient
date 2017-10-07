@@ -8,12 +8,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:tag="1"
         android:text="开关" />
     <Button
         android:id="@+id/btnHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:tag="2"
         android:text="主页" />
 
 
@@ -27,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:tag="3"
             android:text="确定" />
 
         <Button
@@ -35,7 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/btnOk"
             android:layout_alignTop="@id/btnOk"
-            android:text="<" />
+            android:tag="4"
+            android:text="〈" />
 
         <Button
             android:id="@+id/btnRight"
@@ -43,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/btnOk"
             android:layout_alignTop="@id/btnOk"
-            android:text=">" />
+            android:tag="5"
+            android:text="〉" />
 
         <Button
             android:id="@+id/btnTop"
@@ -51,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/btnOk"
             android:layout_alignLeft="@id/btnOk"
+            android:tag="6"
             android:text="∧" />
 
         <Button
@@ -59,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btnOk"
             android:layout_alignLeft="@id/btnOk"
+            android:tag="7"
             android:text="∨" />
     </RelativeLayout>
 
@@ -73,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:tag="8"
             android:text="频道+" />
 
         <Button
@@ -80,6 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:tag="9"
             android:text="频道-" />
     </LinearLayout>
 
@@ -90,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/centerRl"
         android:layout_centerHorizontal="true"
+        android:tag="10"
         android:text="返回" />
 
     <Button
@@ -98,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnBack"
         android:layout_centerHorizontal="true"
-
+        android:tag="11"
         android:text="菜单" />
 
     <LinearLayout
@@ -113,6 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:tag="12"
             android:text="音量+" />
 
         <Button
@@ -120,7 +131,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:tag="13"
             android:text="音量-" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:tag="stu"
+        android:text="开始学习" />
 
 </RelativeLayout>

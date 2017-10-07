@@ -218,6 +218,14 @@
                     android:text="关闭摇头"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="16dp"/>
+
+                <Button
+                    android:id="@+id/button16"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="电视控制"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp"/>
             </LinearLayout>
         </ScrollView>
 

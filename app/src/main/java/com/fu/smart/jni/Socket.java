@@ -17,6 +17,10 @@ public class Socket {
         void deviceStatus(DeviceStatus status);
     }
 
+    private static Socket socket;
+    public static Socket getInstance(){
+        return socket == null ? socket = new Socket() : socket;
+    }
     private Parser parser;
     public void setParserCallback(Parser parser){
         this.parser = parser;
@@ -38,7 +42,9 @@ public class Socket {
     public native void openSocket(int i);
     public native void openAirfan(int i);
 
-
+    public Socket(){
+        socket = this;
+    }
     public void recvData(byte[] data){
         StringBuilder sb = new StringBuilder();
         for(int i = 0 ;i < data.length;i++){
